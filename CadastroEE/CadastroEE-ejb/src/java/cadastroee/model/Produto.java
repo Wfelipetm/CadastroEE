@@ -37,7 +37,7 @@ public class Produto implements Serializable {
     private String nome;
     @Column(name = "QUANTIDADE")
     private Integer quantidade;
-    @Column(name = "PRECOVENDA")
+    @Column(name = "precoVenda")
     private Float precoVenda;
 
     public Produto() {
@@ -101,7 +101,7 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Produto[ codProduto=" + codProduto + " ]";
+        return "cadastroee.controller.Produto[ codProduto=" + codProduto + " ]";
     }
-
+    
 }

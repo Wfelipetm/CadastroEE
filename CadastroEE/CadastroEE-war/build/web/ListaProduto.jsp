@@ -26,19 +26,20 @@
             </tr>
         </thead>
         <tbody>
-            <c:forEach var="p" items="${lista}">
-                <tr>
-                    <td>${p.codProduto}</td>
-                    <td>${p.nome}</td>
-                    <td>${p.quantidade}</td>
-                    <td>${p.precoVenda}</td> 
-                    <td>
-                        <a href="CadastroFC?acao=editProd&codProduto=${p.codProduto}" class="btn btn-primary btn-sm">Alterar</a> <!-- Adicione as classes btn, btn-primary e btn-sm ao link de alteração -->
-                        <a href="CadastroFC?acao=excProdExec&cod=${p.codProduto}" class="btn btn-danger btn-sm">Excluir</a> <!-- Adicione as classes btn, btn-danger e btn-sm ao link de exclusão -->
-                    </td>
-                </tr>
-            </c:forEach>
-        </tbody>
+    <c:forEach var="p" items="${lista}">
+        <tr>
+            <td>${p.codProduto}</td>
+            <td>${p.nome}</td>
+            <td>${p.quantidade}</td>
+            <td>${p.precoVenda}</td> <!-- Corrigido para p.precovenda -->
+            <td>
+                <a href="CadastroFC?acao=editProd&codProduto=${p.codProduto}" class="btn btn-primary btn-sm">Alterar</a>
+                <a href="CadastroFC?acao=excProdExec&cod=${p.codProduto}" class="btn btn-danger btn-sm">Excluir</a>
+            </td>
+        </tr>
+    </c:forEach>
+</tbody>
+
     </table>
 
     <!-- Adicione os scripts do Bootstrap -->

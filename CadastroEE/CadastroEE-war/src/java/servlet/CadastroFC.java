@@ -6,8 +6,9 @@
 package servlet;
 
 
-import fcontroller.ProdutoStrategy;
+
 import fcontroller.Strategy;
+import fcontroller.ProdutoStrategy;
 import cadastroee.controller.ProdutoFacadeLocal;
 import java.io.IOException;
 
