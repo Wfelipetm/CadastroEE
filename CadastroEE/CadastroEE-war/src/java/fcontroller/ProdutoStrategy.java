@@ -69,13 +69,13 @@ public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
     }
 
     private void editarProduto(HttpServletRequest request) {
-        int codProdutoEdit = Integer.parseInt(request.getParameter("codProduto")); // Verifique o nome do parâmetro
+        int codProdutoEdit = Integer.parseInt(request.getParameter("codProduto")); 
 
         Produto produtoEdit = facade.find(codProdutoEdit);
         if (produtoEdit != null) {
             String nome = request.getParameter("nome");
             int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-            float precoVenda = Float.parseFloat(request.getParameter("precoVenda")); // Novo valor
+            float precoVenda = Float.parseFloat(request.getParameter("precoVenda"));
             produtoEdit.setNome(nome);
             produtoEdit.setQuantidade(quantidade);
             produtoEdit.setPrecoVenda(precoVenda);
@@ -86,7 +86,7 @@ public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
     private void incluirProduto(HttpServletRequest request) {
         String nome = request.getParameter("nome");
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-        float precoVenda = Float.parseFloat(request.getParameter("precoVenda")); // Novo valor
+        float precoVenda = Float.parseFloat(request.getParameter("precoVenda"));
         List<Produto> produtos = facade.findAll();
         int novoCodProduto = 1;
         if (!produtos.isEmpty()) {
