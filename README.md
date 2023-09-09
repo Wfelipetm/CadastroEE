@@ -1,5 +1,24 @@
-# MissaoPraticaN4_Mundo3
-Missão Prática em Java EE e SQL Server
+![image](https://github.com/Wfelipetm/MissaoPraticaN1_Mundo3/assets/108297008/262d833e-618d-480c-83cd-8f856715ebd8)
+
+--------------------------------------------------------------------------------------------------------------
+
+Nome: Wallace Felipe Tavares Moreira 
+
+Matrícula: 202109237331
+
+Universidade: UNIVERSIDADE ESTÁCIO DE SÁ
+
+Curso: Desenvolvimento Full Stack
+
+Campus: Jardim América – Itaguaí/RJ
+
+Disciplina: Nível 1 – Iniciando o caminho pelo Java
+
+Semestre Letivo: Terceiro Semestre
+
+
+  
+--------------------------------------------------------------------------------------------------------------
 ![Imagem do WhatsApp de 2023-08-27 à(s) 10 23 48](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/assets/108297008/a99344fb-350e-466d-85da-cc2a789cb740)
 
 ![Imagem do WhatsApp de 2023-08-27 à(s) 10 24 19](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/assets/108297008/aef99ac0-33e6-4d18-95a1-7723cd960d67)
