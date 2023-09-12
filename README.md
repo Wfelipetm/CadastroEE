@@ -1,4 +1,5 @@
-![Alt text](image.png)
+![image](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/assets/108297008/ff6d2787-4439-4db5-8cdb-866178d3c78a)
+
 
 Nome: Wallace Felipe Tavares Moreira 
 
