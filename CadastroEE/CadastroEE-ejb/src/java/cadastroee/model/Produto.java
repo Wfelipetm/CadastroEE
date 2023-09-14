@@ -36,7 +36,6 @@ public class Produto implements Serializable {
     private String nome;
     @Column(name = "quantidade")
     private Integer quantidade;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "precoVenda")
     private Float precoVenda;
 
