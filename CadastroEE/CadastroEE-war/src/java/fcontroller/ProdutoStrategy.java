@@ -1,11 +1,16 @@
 package fcontroller;
-
-
 import cadastroee.controller.ProdutoFacadeLocal;
 import cadastroee.model.Produto;
-import fcontroller.Strategy;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+
+/*
+
+    Autor: Wallace Tavares
+
+*/
+
+
 
 
 public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
@@ -20,24 +25,66 @@ public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
 
         switch (acao) {
             case "listaProd":
-                listarProdutos(request);
+                List<Produto> listaProdutos = facade.findAll();
+                request.setAttribute("lista", listaProdutos);
                 break;
+
             case "excProdExec":
-                removerProduto(request);
+                int codigo = Integer.parseInt(request.getParameter("cod"));
+                Produto produtoParaExcluir = facade.find(codigo);
+                if (produtoParaExcluir != null) {
+                    facade.remove(produtoParaExcluir);
+                }
                 listarProdutos(request);
                 break;
+
             case "editProd":
-                exibirPaginaEditar(request);
+                int idProdutoEdit = Integer.parseInt(request.getParameter("idProduto"));
+                Produto produtoEdit = facade.find(idProdutoEdit);
+                if (produtoEdit != null) {
+                    request.setAttribute("produtoEdit", produtoEdit);
+                }
                 paginaDestino = "EditarProduto.jsp";
                 break;
+
             case "editProdExec":
-                editarProduto(request);
+                int idProdutoEditExec = Integer.parseInt(request.getParameter("idProduto"));
+                Produto produtoEditExec = facade.find(idProdutoEditExec);
+                if (produtoEditExec != null) {
+                    String nome = request.getParameter("nome");
+                    int quantidade = Integer.parseInt(request.getParameter("quantidade"));
+                    float precoVenda = Float.parseFloat(request.getParameter("precoVenda"));
+                    produtoEditExec.setNome(nome);
+                    produtoEditExec.setQuantidade(quantidade);
+                    produtoEditExec.setPrecoVenda(precoVenda);
+                    facade.edit(produtoEditExec);
+                }
                 listarProdutos(request);
                 break;
+
             case "incProdExec":
-                incluirProduto(request);
+                String nomeInc = request.getParameter("nome");
+                int quantidadeInc = Integer.parseInt(request.getParameter("quantidade"));
+                float precoVendaInc = Float.parseFloat(request.getParameter("precoVenda"));
+                List<Produto> listaProdutosInc = facade.findAll();
+                int novoCodProdutoInc = 1;
+                if (!listaProdutosInc.isEmpty()) {
+                    int maxCodProduto = listaProdutosInc.stream()
+                            .mapToInt(Produto::getIdProduto)
+                            .max()
+                            .getAsInt();
+                    novoCodProdutoInc = maxCodProduto + 1;
+                }
+
+                Produto produtoInc = new Produto();
+                produtoInc.setNome(nomeInc);
+                produtoInc.setQuantidade(quantidadeInc);
+                produtoInc.setIdProduto(novoCodProdutoInc);
+                produtoInc.setPrecoVenda(precoVendaInc);
+                facade.create(produtoInc);
                 listarProdutos(request);
                 break;
+
             case "incProd":
                 paginaDestino = "DadosProduto.jsp";
                 request.setAttribute("produto", new Produto());
@@ -50,58 +97,5 @@ public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
     private void listarProdutos(HttpServletRequest request) {
         List<Produto> produtos = facade.findAll();
         request.setAttribute("lista", produtos);
-    }
-
-    private void removerProduto(HttpServletRequest request) {
-        int codigo = Integer.parseInt(request.getParameter("cod"));
-        Produto produto = facade.find(codigo);
-        if (produto != null) {
-            facade.remove(produto);
-        }
-    }
-
-    private void exibirPaginaEditar(HttpServletRequest request) {
-        int codigo = Integer.parseInt(request.getParameter("idProduto"));
-        Produto produtoEdit = facade.find(codigo);
-        if (produtoEdit != null) {
-            request.setAttribute("produtoEdit", produtoEdit);
-        }
-    }
-
-    private void editarProduto(HttpServletRequest request) {
-        int idProdutoEdit = Integer.parseInt(request.getParameter("idProduto")); 
-
-        Produto produtoEdit = facade.find(idProdutoEdit);
-        if (produtoEdit != null) {
-            String nome = request.getParameter("nome");
-            int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-            float precoVenda = Float.parseFloat(request.getParameter("precoVenda"));
-            produtoEdit.setNome(nome);
-            produtoEdit.setQuantidade(quantidade);
-            produtoEdit.setPrecoVenda(precoVenda);
-            facade.edit(produtoEdit);
-        }
-    }
-
-    private void incluirProduto(HttpServletRequest request) {
-        String nome = request.getParameter("nome");
-        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-        float precoVenda = Float.parseFloat(request.getParameter("precoVenda"));
-        List<Produto> produtos = facade.findAll();
-        int novoCodProduto = 1;
-        if (!produtos.isEmpty()) {
-            int maxCodProduto = produtos.stream()
-                    .mapToInt(Produto::getIdProduto)
-                    .max()
-                    .getAsInt();
-            novoCodProduto = maxCodProduto + 1;
-        }
-
-        Produto produto = new Produto();
-        produto.setNome(nome);
-        produto.setQuantidade(quantidade);
-        produto.setIdProduto(novoCodProduto);
-        produto.setPrecoVenda(precoVenda);
-        facade.create(produto);
     }
 }
