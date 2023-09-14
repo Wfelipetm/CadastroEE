@@ -9,7 +9,7 @@
 <body>
     <form action="CadastroFC" method="post">
         <input type="hidden" name="acao" value="editProdExec"/>
-        <input type="hidden" name="codProduto" value="${produtoEdit.codProduto}"/>
+        <input type="hidden" name="idProduto" value="${produtoEdit.idProduto}"/>
         <div class="container mt-3">
             <div class="row">
                 <div class="col-md-6">

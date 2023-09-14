@@ -1,14 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cadastroee.model;
+
+
 
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -21,38 +20,39 @@ import javax.validation.constraints.Size;
  * @author wfeli
  */
 @Entity
-@Table(name = "PRODUTO")
+@Table(name = "Produto")
 @NamedQueries({
     @NamedQuery(name = "Produto.findAll", query = "SELECT p FROM Produto p")})
 public class Produto implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
-    @Column(name = "COD_PRODUTO")
-    private Integer codProduto;
-    @Size(max = 50)
-    @Column(name = "NOME")
+    @Column(name = "idProduto")
+    private Integer idProduto;
+    @Size(max = 255)
+    @Column(name = "nome")
     private String nome;
-    @Column(name = "QUANTIDADE")
+    @Column(name = "quantidade")
     private Integer quantidade;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "precoVenda")
     private Float precoVenda;
 
     public Produto() {
     }
 
-    public Produto(Integer codProduto) {
-        this.codProduto = codProduto;
+    public Produto(Integer idProduto) {
+        this.idProduto = idProduto;
     }
 
-    public Integer getCodProduto() {
-        return codProduto;
+    public Integer getIdProduto() {
+        return idProduto;
     }
 
-    public void setCodProduto(Integer codProduto) {
-        this.codProduto = codProduto;
+    public void setIdProduto(Integer idProduto) {
+        this.idProduto = idProduto;
     }
 
     public String getNome() {
@@ -82,18 +82,17 @@ public class Produto implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (codProduto != null ? codProduto.hashCode() : 0);
+        hash += (idProduto != null ? idProduto.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Produto)) {
             return false;
         }
         Produto other = (Produto) object;
-        if ((this.codProduto == null && other.codProduto != null) || (this.codProduto != null && !this.codProduto.equals(other.codProduto))) {
+        if ((this.idProduto == null && other.idProduto != null) || (this.idProduto != null && !this.idProduto.equals(other.idProduto))) {
             return false;
         }
         return true;
@@ -101,7 +100,7 @@ public class Produto implements Serializable {
 
     @Override
     public String toString() {
-        return "cadastroee.controller.Produto[ codProduto=" + codProduto + " ]";
+        return "cadastroee.controller.Produto[ idProduto=" + idProduto + " ]";
     }
     
 }

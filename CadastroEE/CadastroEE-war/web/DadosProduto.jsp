@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Incluir Produto</title>
-    <!-- Adicione os links para os arquivos Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -26,8 +25,7 @@
                         <label for="precoVenda" class="form-label">Preço Venda:</label>
                         <input type="number" step="0.01" name="precoVenda" id="precoVenda" class="form-control" required/> <!-- Adicione o campo de preço de venda -->
                     </div>
-                    <!-- Remova a linha abaixo se você não quiser definir um valor fixo para o codProduto -->
-                    <input type="hidden" name="codProduto" value="4"/> <!-- Adicione este campo -->
+                    <input type="hidden" name="idProduto" value="4"/> 
                 </div>
             </div>
             <div class="mb-3">
@@ -37,7 +35,6 @@
         </div>
     </form>
 
-    <!-- Adicione os scripts do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

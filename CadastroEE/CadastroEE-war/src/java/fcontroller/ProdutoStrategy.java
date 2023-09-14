@@ -61,7 +61,7 @@ public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
     }
 
     private void exibirPaginaEditar(HttpServletRequest request) {
-        int codigo = Integer.parseInt(request.getParameter("codProduto"));
+        int codigo = Integer.parseInt(request.getParameter("idProduto"));
         Produto produtoEdit = facade.find(codigo);
         if (produtoEdit != null) {
             request.setAttribute("produtoEdit", produtoEdit);
@@ -69,9 +69,9 @@ public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
     }
 
     private void editarProduto(HttpServletRequest request) {
-        int codProdutoEdit = Integer.parseInt(request.getParameter("codProduto")); 
+        int idProdutoEdit = Integer.parseInt(request.getParameter("idProduto")); 
 
-        Produto produtoEdit = facade.find(codProdutoEdit);
+        Produto produtoEdit = facade.find(idProdutoEdit);
         if (produtoEdit != null) {
             String nome = request.getParameter("nome");
             int quantidade = Integer.parseInt(request.getParameter("quantidade"));
@@ -91,7 +91,7 @@ public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
         int novoCodProduto = 1;
         if (!produtos.isEmpty()) {
             int maxCodProduto = produtos.stream()
-                    .mapToInt(Produto::getCodProduto)
+                    .mapToInt(Produto::getIdProduto)
                     .max()
                     .getAsInt();
             novoCodProduto = maxCodProduto + 1;
@@ -100,7 +100,7 @@ public class ProdutoStrategy extends Strategy<ProdutoFacadeLocal> {
         Produto produto = new Produto();
         produto.setNome(nome);
         produto.setQuantidade(quantidade);
-        produto.setCodProduto(novoCodProduto);
+        produto.setIdProduto(novoCodProduto);
         produto.setPrecoVenda(precoVenda);
         facade.create(produto);
     }
