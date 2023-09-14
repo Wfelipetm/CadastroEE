@@ -56,7 +56,7 @@ Prática: Implementação de sistema cadastral com interface Web, baseado nas te
 
 
 
-### Excluindo Tomate
+### Excluindo Abacaxi
 
 ![Imagem do WhatsApp de 2023-09-14 à(s) 19 55 08](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/assets/108297008/25a2bf9b-d2b6-41d4-bad5-ca3feefdec33)
 
