@@ -18,16 +18,16 @@ Semestre Letivo: Terceiro Semestre
 
 -------------------------------------------------------------------------------
 
-### Relatório discente de acompanhamento:
-- [PDF Relatório](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/blob/main/Relat%C3%B3rio_N4.pdf)
+Prática: Implementação de sistema cadastral com interface Web, baseado nas tecnologias de Servlets, JPA e JEE. 
 
 -------------------------------------------------------------------------------
 
 
 
 
-Prática: Implementação de sistema cadastral com interface Web, baseado nas tecnologias de Servlets, JPA e JEE. 
 
+### Relatório discente de acompanhamento:
+- [PDF Relatório](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/blob/main/Relat%C3%B3rio_N4.pdf)
 
 -------------------------------------------------------------------------------
 ### Lista de Produtos
