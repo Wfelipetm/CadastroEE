@@ -16,8 +16,10 @@ Disciplina: Nível 4 – Vamos integrar sistemas
 Semestre Letivo: Terceiro Semestre
 
 
+-------------------------------------------------------------------------------
 
-
+### Relatório discente de acompanhamento:
+- [PDF Relatório](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/blob/main/Relat%C3%B3rio_N4.pdf)
 
 -------------------------------------------------------------------------------
 
