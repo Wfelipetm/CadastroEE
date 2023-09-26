@@ -1,20 +1,9 @@
 
 
-
--------------------------------------------------------------------------------
-
 Prática: Implementação de sistema cadastral com interface Web, baseado nas tecnologias de Servlets, JPA e JEE. 
 
 -------------------------------------------------------------------------------
 
-
-
-
-
-### Relatório discente de acompanhamento:
-- [PDF Relatório](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/blob/main/Relat%C3%B3rio_N4.pdf)
-
--------------------------------------------------------------------------------
 ### Lista de Produtos
 
 ![1](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/assets/108297008/3c6e6f6e-8624-4656-903a-c6919b8a1043)
