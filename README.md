@@ -1,20 +1,4 @@
 
-![265780663-41324c9f-57ce-4236-b519-9b10ac00132b](https://github.com/Wfelipetm/MissaoPraticaN4_Mundo3/assets/108297008/798568a5-02e3-4b23-8e47-000e20f8af5b)
-
-
-Nome: Wallace Felipe Tavares Moreira 
-
-Matrícula: 202109237331
-
-Universidade: UNIVERSIDADE ESTÁCIO DE SÁ
-
-Curso: Desenvolvimento Full Stack
-
-Campus: Jardim América – Itaguaí/RJ
-
-Disciplina: Nível 4 – Vamos integrar sistemas
-
-Semestre Letivo: Terceiro Semestre
 
 
 -------------------------------------------------------------------------------
